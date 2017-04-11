@@ -79,6 +79,24 @@ class MaxHeap:
         wrapped_item = _ReverseHeapObject(item)
         return heapq.heappushpop(self.heap, wrapped_item).value
 
+    def __len__(self):
+        return self.heap.__len__()
+
+    def __getitem__(self, key):
+        if len(self.heap) > 0:
+            return self.heap.__getitem__(key).value
+        else:
+            raise IndexError('heap index out of range')
+
+    def __iter__(self):
+        return self.heap.__iter__()
+
+    def __reserved__(self):
+        return self.heap.__reversed__()
+
+    def __contains__(self, item):
+        return self.heap.__contains__(_ReverseHeapObject(item))
+
     def __str__(self):
         """
         >>> str(MaxHeap())

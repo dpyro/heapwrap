@@ -45,6 +45,24 @@ class MinHeap:
         """
         return heapq.heappushpop(self.heap, item)
 
+    def __len__(self):
+        return self.heap.__len__()
+
+    def __getitem__(self, key):
+        if len(self.heap) > 0:
+            return self.heap.__getitem__(key)
+        else:
+            raise IndexError('heap index out of range')
+
+    def __iter__(self):
+        return self.heap.__iter__()
+
+    def __reserved__(self):
+        return self.heap.__reversed__()
+
+    def __contains__(self, item):
+        return self.heap.__contains__(item)
+
     def __str__(self):
         """
         >>> str(MinHeap())
