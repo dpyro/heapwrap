@@ -3,5 +3,11 @@
 Installing `heapwrap`:
 
 ```shell
-pip3 install --upgrade heapwrap
+pip install --upgrade heapwrap
+```
+
+Build the documentation from source:
+
+```shell
+doxygen
 ```

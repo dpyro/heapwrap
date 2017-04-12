@@ -62,6 +62,8 @@ class MaxHeap:
     def replace(self, item):
         """Fast version of a pop followed by a push.
 
+        \return Largest element in this heap before the push
+
         >>> x = MaxHeap([1,2,3])
         >>> x.replace(4)
         3
